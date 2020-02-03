@@ -1,4 +1,4 @@
-package com.asemplinski.ThreeGoodThings.domain;
+package com.asemplinski.threegoodthings.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

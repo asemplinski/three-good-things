@@ -1,4 +1,4 @@
-package com.asemplinski.ThreeGoodThings.services;
+package com.asemplinski.threegoodthings.services;
 
 import java.util.Set;
 

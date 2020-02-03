@@ -1,6 +1,6 @@
-package com.asemplinski.ThreeGoodThings.repositories;
+package com.asemplinski.threegoodthings.repositories;
 
-import com.asemplinski.ThreeGoodThings.domain.Thing;
+import com.asemplinski.threegoodthings.domain.Thing;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ThingRepository extends JpaRepository<Thing, Long> {
