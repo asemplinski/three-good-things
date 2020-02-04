@@ -7,6 +7,7 @@ import com.asemplinski.threegoodthings.services.ThingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -22,27 +23,25 @@ public class ThingSDJpaService implements ThingService {
         this.thingMapper = thingMapper;
     }
 
-    @Override
-    public Set<Thing> findall() {
+
+    public List<Thing> findall() {
         return null;
     }
 
-    @Override
+
     public Thing findById(Long aLong) {
         return null;
     }
 
-    @Override
+
     public Thing save(Thing object) {
         return null;
     }
 
-    @Override
     public void delete(Thing object) {
 
     }
 
-    @Override
     public void deleteById(Long aLong) {
 
     }

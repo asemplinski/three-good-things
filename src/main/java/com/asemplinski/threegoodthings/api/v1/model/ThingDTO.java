@@ -12,5 +12,4 @@ public class ThingDTO {
     private Integer daysOrder;
     private String thing;
 
-    Day day;
 }

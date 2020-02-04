@@ -12,6 +12,6 @@ public class DayDTO {
     private Long id;
     private LocalDate date;
 
-    List<Thing> things;
+    private List<ThingDTO> things;
 
 }

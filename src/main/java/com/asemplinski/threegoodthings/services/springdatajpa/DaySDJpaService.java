@@ -1,14 +1,18 @@
 package com.asemplinski.threegoodthings.services.springdatajpa;
 
 import com.asemplinski.threegoodthings.api.v1.mapper.DayMapper;
+import com.asemplinski.threegoodthings.api.v1.model.DayDTO;
 import com.asemplinski.threegoodthings.domain.Day;
 import com.asemplinski.threegoodthings.repositories.DayRepository;
 import com.asemplinski.threegoodthings.services.DayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class DaySDJpaService implements DayService {
@@ -25,35 +29,44 @@ public class DaySDJpaService implements DayService {
     }
 
 
-    @Override
-    public Set<Day> findall() {
+    private DayDTO saveAndReturnDTO(Day day){
 
-        Set<Day> daysToReturn = new HashSet<>();
-        dayRepository.findAll().forEach(daysToReturn::add);
+        Day savedDay = dayRepository.save(day);
 
-        return daysToReturn;
-    }
+        DayDTO returnDTO = dayMapper.dayToDayDTO(savedDay);
 
-    @Override
-    public Day findById(Long aLong) {
-
-        return dayRepository.findById(aLong).orElse(null);
+        return returnDTO;
     }
 
 
-
     @Override
-    public Day save(Day object) {
-        return dayRepository.save(object);
+    public List<DayDTO> getAllDays() {
+        return dayRepository.findAll()
+                .stream()
+                .map(dayMapper::dayToDayDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public void delete(Day object) {
-        dayRepository.delete(object);
+    public DayDTO getDayByDate(LocalDate date) {
+        return null;
+    }
+
+
+    @Override
+    public DayDTO getDayById(Long id) {
+        return dayMapper.dayToDayDTO(dayRepository.findDayById(id));
     }
 
     @Override
-    public void deleteById(Long aLong) {
-        dayRepository.deleteById(aLong);
+    public DayDTO createNewDay(DayDTO dayDTO) {
+
+        return saveAndReturnDTO(dayMapper.dayDTOToDay(dayDTO));
+    }
+
+
+    @Override
+    public void deleteDayById(Long id) {
+
     }
 }

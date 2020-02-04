@@ -1,10 +1,11 @@
 package com.asemplinski.threegoodthings.services;
 
-import java.util.Set;
+import java.util.List;
+
 
 public interface CrudService<T, ID> {
 
-    Set<T> findall();
+    List<T> findall();
 
     T findById(ID id);
 
