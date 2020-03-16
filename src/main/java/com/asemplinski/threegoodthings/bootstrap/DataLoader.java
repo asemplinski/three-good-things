@@ -41,11 +41,17 @@ public class DataLoader implements CommandLineRunner {
         LocalDate day1 =  LocalDate.of(2020, 2, 3);
         Day firstDay = Day.builder().date(day1).thisDaysThings(firstDaysThings).build();
 
+        /*
+        LocalDate day2 = LocalDate.of(2020, 2, 4);
+        Day secondDay = Day.builder().date(day2).build();
+        */
+
         firstThing.setDay(firstDay);
         secondThing.setDay(firstDay);
         thirdThing.setDay(firstDay);
 
         dayRepository.save(firstDay);
+        //dayRepository.save(secondDay);
 
         thingRepository.save(firstThing);
         thingRepository.save(secondThing);

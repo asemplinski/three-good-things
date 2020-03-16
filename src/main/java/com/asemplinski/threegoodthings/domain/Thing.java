@@ -23,7 +23,7 @@ public class Thing extends BaseEntity{
 
     String thing;
 
-    @ManyToOne(targetEntity = Day.class)
+    @ManyToOne(targetEntity = Day.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "Day_Things")
 
     Day day;

@@ -1,6 +1,7 @@
 package com.asemplinski.threegoodthings.services.springdatajpa;
 
 import com.asemplinski.threegoodthings.api.v1.mapper.ThingMapper;
+import com.asemplinski.threegoodthings.domain.Day;
 import com.asemplinski.threegoodthings.domain.Thing;
 import com.asemplinski.threegoodthings.repositories.ThingRepository;
 import com.asemplinski.threegoodthings.services.ThingService;
@@ -34,7 +35,7 @@ public class ThingSDJpaService implements ThingService {
     }
 
 
-    public Thing save(Thing object) {
+    public Thing save(Thing thing) {
         return null;
     }
 

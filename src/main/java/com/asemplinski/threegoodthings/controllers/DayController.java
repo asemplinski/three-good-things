@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/days")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class DayController {
 
     private final DayService dayService;
@@ -25,6 +26,7 @@ public class DayController {
 
     @PostMapping()
     public DayDTO createNewDay(@RequestBody DayDTO dayDTO){
+
         return dayService.createNewDay(dayDTO);
     }
 
